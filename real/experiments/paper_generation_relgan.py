@@ -102,7 +102,7 @@ args = [
     '--vocab-size', '102',
     '--start-token', '0',
     '--seq-len', seq_len,
-    '--num-sentences', '10000',  # how many generated sentences to use per evaluation
+    '--num-sentences', '29987',  # how many generated sentences to use per evaluation
     '--gen-emb-dim', gen_emb_dim,
     '--dis-emb-dim', dis_emb_dim,
     '--num-rep', num_rep,

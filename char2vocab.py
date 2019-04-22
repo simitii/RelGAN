@@ -4,7 +4,8 @@ import numpy as np
 parser = argparse.ArgumentParser()
 parser.add_argument('--seq_len', type=int, default=128)
 parser.add_argument('--input_file', type=str, default="../dataset/preprocessed_data.txt")
-parser.add_argument('--output_file', type=str, default="data/paper_generation.txt")
+parser.add_argument('--train_file', type=str, default="data/paper_generation.txt")
+parser.add_argument('--test_file', type=str, default="data/testdata/test_paper_generation.txt")
 parser.add_argument('--char2idx', type=str, default="data/paper_gen_char2idx.pickle")
 parser.add_argument('--idx2char', type=str, default="data/paper_gen_idx2char.pickle")
 
@@ -37,5 +38,22 @@ for i in range(len(text)):
 
 vocab_text = "".join(vocab_text)
 
-with open(opt.output_file, 'wt') as f:
-    f.write(vocab_text)
+lines = vocab_text.splitlines()
+nb_lines = len(lines)
+
+train_text = lines[0:int(0.9*nb_lines)]
+test_text = lines[int(0.9*nb_lines):]
+
+with open(opt.train_file, 'wt') as f:
+    for t in train_text:    
+        f.write(t + "\n")
+
+with open(opt.test_file, 'wt') as f:
+    for t in test_text:    
+        f.write(t + "\n")
+
+with open("stats.txt", "wt") as f:
+    f.write("Number of vocab:{}\n".format(len(vocab)) \
+        + "Number of lines in train:{}\n".format(len(train_text)) \
+            + "Number of lines in test:{}".format(len(test_text)))
+

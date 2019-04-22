@@ -1,0 +1,3 @@
+Number of vocab:102
+Number of lines in train:269874
+Number of lines in test:29987
