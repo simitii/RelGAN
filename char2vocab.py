@@ -4,9 +4,9 @@ import numpy as np
 parser = argparse.ArgumentParser()
 parser.add_argument('--seq_len', type=int, default=128)
 parser.add_argument('--input_file', type=str, default="../dataset/preprocessed_data.txt")
-parser.add_argument('--output_file', type=str, default="vocab_data.txt")
-parser.add_argument('--char2idx', type=str, default="char2idx.pickle")
-parser.add_argument('--idx2char', type=str, default="idx2char.pickle")
+parser.add_argument('--output_file', type=str, default="data/paper_generation.txt")
+parser.add_argument('--char2idx', type=str, default="data/paper_gen_char2idx.pickle")
+parser.add_argument('--idx2char', type=str, default="data/paper_gen_idx2char.pickle")
 
 opt = parser.parse_args()
 
