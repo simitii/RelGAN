@@ -1,4 +1,4 @@
-## RelGAN
+## RelGAN-Paper-Generation
 
 This repository contains the code to reproduce the core results 
 from the paper [RelGAN: Relational Generative Adversarial Networks for Text Generation](https://openreview.net/pdf?id=rJedV3R5tm).
@@ -15,20 +15,11 @@ This project uses Python 3.5.2, with the following lib dependencies:
 
 ## Instructions
 The `experiments` folders contain scripts for starting the different experiments.
-For example, to reproduce the `synthetic data` experiments, you can try:
-```
-cd oracle/experiments
-python3 oracle_relgan.py [job_id] [gpu_id]
-```
-or `COCO Image Captions`:
+
+### Paper Generation Problem
 ```
 cd real/experiments
-python3 coco_relgan.py [job_id] [gpu_id]
-```
-or `EMNLP2017 WMT News`:
-```
-cd real/experiments
-python3 emnlp_relgan.py [job_id] [gpu_id]
+python3 paper_generation_relgan.py [job_id] [gpu_id]
 ```
 Note to replace [job_id] and [gpu_id] with appropriate numerical values.
 
