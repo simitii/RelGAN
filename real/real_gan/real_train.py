@@ -114,7 +114,7 @@ def real_train(generator, discriminator, oracle_loader, config):
             g_pretrain_loss_np = pre_train_epoch(sess, g_pretrain_op, g_pretrain_loss, x_real, oracle_loader)
 
             # Test
-            ntest_pre = 10
+            ntest_pre = 50
             if np.mod(epoch, ntest_pre) == 0:
                 # generate fake data and create batches
                 gen_save_file = os.path.join(sample_dir, 'pre_samples_{:05d}.txt'.format(epoch))

@@ -45,11 +45,13 @@ def pre_train_epoch(sess, g_pretrain_op, g_pretrain_loss, x_real, data_loader):
     supervised_g_losses = []
     data_loader.reset_pointer()
 
+    print()
     for it in range(data_loader.num_batch):
         batch = data_loader.next_batch()
         _, g_loss = sess.run([g_pretrain_op, g_pretrain_loss], feed_dict={x_real: batch})
         supervised_g_losses.append(g_loss)
-
+        print("\rpre_train_step: {}/{}".format(it, data_loader.num_batch), end="")
+    print()
     return np.mean(supervised_g_losses)
 
 
